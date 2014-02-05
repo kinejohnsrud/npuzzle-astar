@@ -3,17 +3,19 @@ package npuzzlesolver;
 public class Node {
 	
 	String[][] puzzleBoard;
-	int g;		//f = g + h		g = cost from root to present position
+	int g = 0;		//f = g + h		g = cost from root to present position
 	int h;		//h = heuristics
+	int f;
 	int posXX;	//the x position of the X mark
 	int posXY;	//the y position of the X mark
 	char direction;		//left l, right r, up u, down d
 	int[] goalState;	//goal state of a given puzzle piece
+	Node parent = null;
 	
 	
 	public Node (String[][] puzzleBoard){
 		this.puzzleBoard = puzzleBoard;
-		manhattanDistance();
+		this.manhattanDistance();
 		
 	}
 
