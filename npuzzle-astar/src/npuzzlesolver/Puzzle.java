@@ -16,7 +16,7 @@ public class Puzzle {
 		Puzzle run = new Puzzle();
 		try {
 			run.rootNode = run.initialPuzzleBoard(args[0]);	//gets the initial puzzleBoard from file
-			run.solvePuzzle("solution.txt");
+			run.solvePuzzle(args[1]);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -132,6 +132,7 @@ public class Puzzle {
 			return leftNode;
 		}
 	}
+	
 	public Node right(Node node){
 		if(node.posXX >= puzzleBoard.length-1){
 			return null;
@@ -145,6 +146,7 @@ public class Puzzle {
 			return rightNode;
 		}
 	}
+	
 	public Node up(Node node){
 		if(node.posXY <= 0){
 			return null;
@@ -158,6 +160,7 @@ public class Puzzle {
 			return upNode;
 		}
 	}
+	
 	public Node down(Node node){
 		if(node.posXY >= puzzleBoard.length-1){
 			return null;
@@ -171,7 +174,6 @@ public class Puzzle {
 			return downNode;
 		}
 	}
-	
 	
 	public ArrayList<Node> generateChildrenNodes(Node node){
 		ArrayList<Node> childrenNodes = new ArrayList<Node>();
@@ -197,11 +199,5 @@ public class Puzzle {
 		}
 		return childrenNodes;
 	}
-	
-//	private void printPuzzleBoard(Node node){
-//		for (int i = 0; i < node.puzzleBoard.length; i++) {
-//			System.out.println(Arrays.toString(node.puzzleBoard[i]));
-//		}
-//	}
 }
 

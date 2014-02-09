@@ -15,8 +15,7 @@ public class Node {
 	
 	public Node (String[][] puzzleBoard){
 		this.puzzleBoard = puzzleBoard;
-		this.manhattanDistance();
-		
+		this.manhattanDistance();	
 	}
 
 	public void manhattanDistance(){
